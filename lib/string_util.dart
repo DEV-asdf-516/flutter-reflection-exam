@@ -57,7 +57,10 @@ class StringUtil{
           var item = fieldValue.entries.elementAt(j);
           sb.write(putIndent(indent + 2));
           sb.write("${item.key}:${item.value}");
-          sb.write(",\n");
+          if (j != fieldValue.entries.length - 1) {
+            sb.write(",");
+          }
+          sb.write("\n");
         }
         sb.write(putIndent(indent + 1));
         sb.write("}");
