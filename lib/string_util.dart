@@ -4,10 +4,10 @@ import 'package:reflaction/reflection.dart';
 import 'package:reflectable/mirrors.dart';
 
 class StringUtil{
-  static const Set<Type> primitiveTypes = {int, double, String, bool, Enum};
+  static const Set<Type> primitiveTypes = {int, double, String, bool};
 
   static bool isPrimitive(dynamic value) {
-    return value == null || primitiveTypes.contains(value.runtimeType);
+    return value == null || primitiveTypes.contains(value.runtimeType) || value is Enum;
   }
 
   static String putIndent(int indentSize) {
